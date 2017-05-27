@@ -4,7 +4,7 @@
 
 ## Features
 
-- Zero upfront configuration necessary to start developing and building a React web app
+- Zero upfront configuration necessary to start developing and building a Preact web app
 - Modern Babel compilation adding JSX and object rest spread syntax.
 - ~~Support for React Hot Loader~~
 - Support for ES6/7 class properties and experimental decorators.
