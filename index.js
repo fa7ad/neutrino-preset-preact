@@ -5,19 +5,25 @@ const loaderMerge = require('neutrino-middleware-loader-merge');
 const eslintrc = require('./dev-eslint.json');
 const MODULES = join(__dirname, 'node_modules');
 
+const babelPlugins = [
+  [
+    require.resolve('babel-plugin-transform-react-jsx'),
+    { pragma: 'Preact.h' }
+  ],
+  require.resolve('babel-plugin-transform-object-rest-spread'),
+  require.resolve('babel-plugin-transform-class-properties'),
+  require.resolve('babel-plugin-transform-decorators-legacy')
+]
+
+if (process.env.NODE_ENV === 'development') {
+  babelPlugins.splice(1, 0, require.resolve('babel-plugin-transform-es2015-classes'));
+}
+
 module.exports = neutrino => {
   neutrino.use(web);
   neutrino.use(loaderMerge('compile', 'babel'), {
     presets: [require.resolve('babel-preset-preact')],
-    plugins: [
-      [
-        require.resolve('babel-plugin-transform-react-jsx'),
-        { pragma: 'preact.h' }
-      ],
-      require.resolve('babel-plugin-transform-object-rest-spread'),
-      require.resolve('babel-plugin-transform-class-properties'),
-      require.resolve('babel-plugin-transform-decorators-legacy')
-    ]
+    plugins: babelPlugins
   });
 
   neutrino.config
@@ -47,7 +53,7 @@ module.exports = neutrino => {
     .plugin('preact')
       .use(require('webpack').ProvidePlugin, [
         {
-          preact: 'preact'
+          Preact: 'preact'
         }
       ])
       .end()
