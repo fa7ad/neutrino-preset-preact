@@ -12,9 +12,9 @@
   ],
   "author": "Fahad Hossain <8bit.demoncoder@gmail.com>",
   "license": "MPL-2.0",
-  "repository": "https://github.com/fa7ad/neutrino-preset-react",
+  "repository": "https://github.com/fa7ad/neutrino-preset-preact",
   "homepage": "https://neutrino.js.org",
-  "bugs": "https://github.com/fa7ad/neutrino-preset-react/issues",
+  "bugs": "https://github.com/fa7ad/neutrino-preset-preact/issues",
   "dependencies": {
     "babel-eslint": "^7.2.3",
     "babel-plugin-transform-class-properties": "^6.24.1",
