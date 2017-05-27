@@ -1,6 +1,6 @@
 {
   "name": "neutrino-preset-preact",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Neutrino preset for building Preact web applications",
   "main": "index.js",
   "keywords": [
