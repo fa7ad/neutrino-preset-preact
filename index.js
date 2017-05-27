@@ -21,6 +21,9 @@ module.exports = neutrino => {
   });
 
   neutrino.config
+    .devServer
+      .hot(true)
+      .end()
     .resolve
       .modules
         .add(MODULES)
@@ -37,9 +40,6 @@ module.exports = neutrino => {
       .modules
         .add(MODULES)
         .end()
-      .end()
-    .plugin('hmr')
-      .use(require('webpack').HotModuleReplacementPlugin)
       .end()
     .plugin('named-modules')
       .use(require('webpack').NamedModulesPlugin)

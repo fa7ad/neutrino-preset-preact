@@ -236,21 +236,18 @@ Webpack's HMR is enabled but Hot Module Replacement may/may not work at this mom
 For example:
 
 ```jsx
-import { render, h } from 'preact';
-import MyApp from './MyApp';
+import { render } from 'preact';
+import App from './App';
 
-const load = () => render(
-  <MyApp />,
-  document.body,
-  document.getElementById('root')
-);
-
-if (module.hot) {
-  module.hot.accept();
-  module.hot.accept('./MyApp', load);
+let root;
+function init () {
+  root = render(<App />, document.getElementById('root'), root);
 }
 
-load();
+init();
+
+if (module.hot) module.hot.accept('./App', init);
+
 ```
 
 ## Contributing
