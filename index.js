@@ -51,6 +51,9 @@ module.exports = neutrino => {
         }
       ])
       .end()
+    .when(process.env.NODE_ENV === 'development', config => config
+      .entry('index')
+      .prepend(require.resolve('webpack/hot/only-dev-server')))
     .when(neutrino.config.module.rules.has('lint'), () =>
       neutrino.use(loaderMerge('lint', 'eslint'), eslintrc)
     );
