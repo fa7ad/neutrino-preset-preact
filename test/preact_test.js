@@ -15,7 +15,7 @@ test('uses preset', t => {
 test('valid preset production', t => {
   process.env.NODE_ENV = 'production';
   const api = Neutrino();
-  
+
   api.use(require('..'));
 
   const errors = validate(api.config.toConfig());

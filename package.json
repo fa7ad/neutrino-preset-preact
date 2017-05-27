@@ -1,27 +1,31 @@
 {
-  "name": "neutrino-preset-react",
-  "version": "5.9.0",
-  "description": "Neutrino preset for building React web applications",
+  "name": "neutrino-preset-preact",
+  "version": "1.0.0",
+  "description": "Neutrino preset for building Preact web applications",
   "main": "index.js",
   "keywords": [
     "neutrino",
     "neutrino-preset",
-    "react",
+    "preact",
     "web",
     "hot module reload"
   ],
   "author": "Eli Perelman <eli@eliperelman.com>",
   "license": "MPL-2.0",
-  "repository": "https://github.com/mozilla-neutrino/neutrino-dev/tree/master/packages/neutrino-preset-react",
+  "repository": "https://github.com/fa7ad/neutrino-preset-react",
   "homepage": "https://neutrino.js.org",
-  "bugs": "https://github.com/mozilla-neutrino/neutrino-dev/issues",
+  "bugs": "https://github.com/fa7ad/neutrino-preset-react/issues",
   "dependencies": {
+    "babel-eslint": "^7.2.3",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
-    "babel-preset-react": "^6.23.0",
-    "eslint-plugin-react": "^6.10.3",
+    "babel-preset-preact": "^1.1.0",
+    "eslint-plugin-jest": "^20.0.3",
+    "eslint-plugin-react": "^7.0.1",
     "neutrino-middleware-loader-merge": "^5.9.0",
     "neutrino-preset-web": "^5.9.0",
-    "react-hot-loader": "^3.0.0-beta.6"
+    "webpack-hot-middleware": "^2.18.0"
   },
   "peerDependencies": {
     "neutrino": "^5.5.0"
