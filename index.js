@@ -13,10 +13,10 @@ const babelPlugins = [
   require.resolve('babel-plugin-transform-object-rest-spread'),
   require.resolve('babel-plugin-transform-class-properties'),
   require.resolve('babel-plugin-transform-decorators-legacy')
-]
+];
 
 if (process.env.NODE_ENV === 'development') {
-  babelPlugins.splice(1, 0, require.resolve('babel-plugin-transform-es2015-classes'));
+  babelPlugins.push(require.resolve('babel-plugin-transform-es2015-classes'));
 }
 
 module.exports = neutrino => {
